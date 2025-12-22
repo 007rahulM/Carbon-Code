@@ -1,0 +1,93 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Fira Code', monospace;
+  background-color: #f0f0f0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+.window-controls{
+  display: flex;
+  gap:10px;
+  padding-bottom:10px;
+  align-items: center; /*the contorls don't stick to the very top edge if we add padding later*/
+
+}
+.red{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%; /*beacuse it needs to be circle*/
+  background-color: #ff5f56;
+}
+
+.yellow{
+  width:12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ffbd2e;
+}
+
+.green{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #27c93f;
+}
+.carbon-card{
+  width:fit-content;
+  border-radius: 12px;
+  box-shadow: 0 20px 68px rgba(0,0,0,0.55);
+  padding: 16px;
+  min-width: 300px;
+  transition: all 0.3s ease;
+
+}
+/* In your main CSS file */
+.app-container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  gap:30px;
+  padding:20px;
+}
+
+.app-container h1{
+  margin:0;
+  color: #333;
+  font-size: 3rem;
+}
+
+.controls {
+  display: flex;
+ gap: 15px;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  align-items: center;
+}
+/* --- THE FIX FOR THE FONT --- */
+.cm-editor, .cm-content, .cm-line {
+  font-family: 'Fira Code', monospace !important; /* Forces the font */
+  font-size: 14px;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.cm-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.cm-scroller {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
