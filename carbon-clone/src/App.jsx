@@ -6,6 +6,7 @@ import Controls from "./components/Controls";
 import CarbonCard from "./components/CarbonCard";
 import html2canvas from "html2canvas";//import the library html2canvas for screnshoot 
 
+
 function App(){
   const[theme,setTheme]=useState("dark");
   const[language,setLanguage]=useState("javascript");
@@ -56,7 +57,8 @@ const [padding,setPadding]=useState(32);
 
   return(
     <div  className="app-container">
-      <h1>Carbon CODE</h1>
+      <h1 style={{color:"yellow", backgroundColor:"black", borderRadius:"10px",padding:"12px"}}> Carbon CODE </h1>
+
      {/* pass the state and update to the controls*/}
      {/*Controls component */}
       <Controls
@@ -72,7 +74,7 @@ const [padding,setPadding]=useState(32);
       />
 {/*warap carboncard in a div with the ref */}
 {/*we add some padding and margin to the wrapper so the shadow doesn't get cut off in the photo */}
-<div ref={cardRef} style={{display:"inline-block",margin:"20px"}}>
+<div ref={cardRef} className="card-wrapper" style={{margin:"20px", maxWidth:"100%" , width:"auto"}}>
 
   {/* pass the state read only to the card */}
   {/*Card component */}
@@ -88,6 +90,9 @@ const [padding,setPadding]=useState(32);
      />
 
     </div>
+    {/*footer */}
+    <p style={{color:"#9ca3af", marginTop:"20px",fontSize:"0.9rem",textAlign:"center"}}> Created by Rahul....
+       based on Carbon as reference</p>
      </div>
   );
 }

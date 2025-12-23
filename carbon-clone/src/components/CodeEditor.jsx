@@ -43,10 +43,11 @@ function CodeEditor({theme,language,code,setCode}){
             overflow: "hidden", /* Required for resize handle to show */
             minWidth: "300px",
             minHeight: "100px",
-            borderRadius: "0 0 12px 12px",
+            borderRadius: "12px",
             background: "#282a36", /* Match dracula bg so no white gaps appear */
            width:"auto", /*use width auto so it beahaves nicely with the parent card */ 
-           maxWidth:"100%"
+           maxWidth:"100%",
+           boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
             
         }}>
 

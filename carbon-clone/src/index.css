@@ -1,11 +1,12 @@
 
-
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap');
 
 body {
   margin: 0;
   font-family: 'Fira Code', monospace;
-  background-color: #f0f0f0;
+  /* Replace the old solid color with a cool gradient */
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  min-height: 100vh; /* Ensure gradient covers full screen */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -96,4 +97,83 @@ CodeMirror{
    font-family:'"Fira Code", monospace';
 
 }
+/* === MOBILE RESPONSIVENESS === */
+@media (max-width: 768px) {
+  
+  /* 1. Global Reset */
+  * {
+    box-sizing: border-box;
+  }
 
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* 2. Container */
+  .app-container {
+    padding: 10px !important;
+    width: 100%;
+    align-items: center;
+    overflow: hidden; /* Stop extra scroll */
+  }
+
+  .app-container h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  /* 3. Controls */
+  .controls {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .control-group {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .control-group select, 
+  .control-group input {
+    width: 100%;
+    height: 40px;
+  }
+
+  /* 4. Card Wrapper */
+  .card-wrapper {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* 5. Carbon Card Itself */
+  .carbon-card {
+    width: 100% !important;
+    /* This overrides the min-width: 300px from the main class */
+    min-width: 0 !important; 
+    margin: 0 !important;
+    
+  }
+
+  /* --- CRITICAL FIX HERE --- */
+  /* Target the CodeEditor wrapper div directly */
+  .carbon-card > div:last-child {
+    min-width: 0 !important;  /* Force it to shrink */
+    width: auto !important;
+    max-width: 100% !important;
+    resize: horizontal !important;  /* Remove resize handle */
+   
+  }
+
+  /* 6. Editor Font */
+  .cm-editor {
+    font-size: 11px !important;
+  }
+}
