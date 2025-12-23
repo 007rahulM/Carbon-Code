@@ -91,3 +91,9 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
+CodeMirror{
+  font-size:"16px";
+   font-family:'"Fira Code", monospace';
+
+}
+

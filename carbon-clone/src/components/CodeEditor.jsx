@@ -39,29 +39,32 @@ function CodeEditor({theme,language,code,setCode}){
     return(
         <div 
         style={{ 
-            resize: "both", 
+            resize: "horizontal", /*only allow horizontal resizing this lets the height remiaiin atuo so it gorws wit our code */
             overflow: "hidden", /* Required for resize handle to show */
             minWidth: "300px",
             minHeight: "100px",
             borderRadius: "0 0 12px 12px",
             background: "#282a36", /* Match dracula bg so no white gaps appear */
-            width:"fit-content"  
+           width:"auto", /*use width auto so it beahaves nicely with the parent card */ 
+           maxWidth:"100%"
+            
         }}>
 
         <CodeMirror
         theme={getThemeExtension(theme)}
-        value="console.log('hello world!');"
+        value={code}
         height="auto"
         minWidth="100px"
         extensions={[...getLanguageExtension(language),EditorView.lineWrapping]}
         onChange={onChange}
         code={code}
+        
+        style={{fontSize:"16px", fontFamily:'"Fira Code", monospace'}}
         basicSetup={{
             lineNumbers:false,
             foldGutter:false,
             highlightActiveLine:false
         }}
-        style={{fontSize:"14px", fontFamily:'"Fira Code", monospace'}}
         />
         </div>
     );
