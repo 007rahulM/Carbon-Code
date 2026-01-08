@@ -28,45 +28,46 @@ function CodeEditor({theme,language,code,setCode}){
 
         //pick the theme
         //we cant just pass the string dracula we must pass the imported object
-        const getThemeExtension=(themeName)=>{
-            if(themeName === "dracula"){
-                return dracula;
-            }
-            //for dark and light we,can just return the string name
-            return themeName;
+ const getThemeConfig = (themeName) => {
+        if (themeName === "dracula") {
+            return { extension: dracula, bg: "#282a36" };
         }
+        if (themeName === "light") {
+            return { extension: "light", bg: "#ffffff" };
+        }
+        // Default for "dark"
+        return { extension: "dark", bg: "#282a36" };
+    };
 
-    return(
+    const themeConfig = getThemeConfig(theme);
+
+    return (
         <div 
         style={{ 
-            resize: "horizontal", /*only allow horizontal resizing this lets the height remiaiin atuo so it gorws wit our code */
-            overflow: "hidden", /* Required for resize handle to show */
+            resize: "horizontal",
+            overflow: "hidden",
             minWidth: "300px",
             minHeight: "100px",
             borderRadius: "12px",
-            background: "#282a36", /* Match dracula bg so no white gaps appear */
-           width:"auto", /*use width auto so it beahaves nicely with the parent card */ 
-           maxWidth:"100%",
-           boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
-            
+            // FIX: Use the dynamic background color here
+            background: themeConfig.bg, 
+            width: "auto",
+            maxWidth: "100%",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
         }}>
-
-        <CodeMirror
-        theme={getThemeExtension(theme)}
-        value={code}
-        height="auto"
-        minWidth="100px"
-        extensions={[...getLanguageExtension(language),EditorView.lineWrapping]}
-        onChange={onChange}
-        code={code}
-        
-        style={{fontSize:"16px", fontFamily:'"Fira Code", monospace'}}
-        basicSetup={{
-            lineNumbers:false,
-            foldGutter:false,
-            highlightActiveLine:false
-        }}
-        />
+            <CodeMirror
+                theme={themeConfig.extension}
+                value={code}
+                height="auto"
+                extensions={[...getLanguageExtension(language), EditorView.lineWrapping]}
+                onChange={onChange}
+                style={{fontSize:"16px", fontFamily:'"Fira Code", monospace'}}
+                basicSetup={{
+                    lineNumbers: false,
+                    foldGutter: false,
+                    highlightActiveLine: false
+                }}
+            />
         </div>
     );
 }

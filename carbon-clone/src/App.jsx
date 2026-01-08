@@ -58,6 +58,7 @@ const [padding,setPadding]=useState(32);
   return(
     <div  className="app-container">
       <h1 style={{color:"yellow", backgroundColor:"black", borderRadius:"10px",padding:"12px"}}> Carbon CODE </h1>
+      <p>Instantly convert your source code into clean, beautiful images. Begin by typing or uploading a file...</p>
 
      {/* pass the state and update to the controls*/}
      {/*Controls component */}

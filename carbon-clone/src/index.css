@@ -5,7 +5,7 @@ body {
   margin: 0;
   font-family: 'Fira Code', monospace;
   /* Replace the old solid color with a cool gradient */
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #d1cece 100%);
   min-height: 100vh; /* Ensure gradient covers full screen */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -56,16 +56,31 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #f0f0f0;
+  background-color: #FFFFFF;
   gap:30px;
   padding:20px;
 }
 
-.app-container h1{
+.app-container h1 {
   margin:0;
   color: #333;
   font-size: 3rem;
 }
+
+.app-container p{
+  max-width:900px;
+  text-align: center;
+  color: #555;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  padding-bottom: 20px;
+  margin:0;
+ font-size: 1.1rem;
+ font-family: 'Fira Code', monospace;
+ font-weight: 500;
+ font-style: normal;
+}
+
 
 .controls {
   display: flex;
@@ -94,6 +109,7 @@ body {
 
 CodeMirror{
   font-size:"16px";
+  
    font-family:'"Fira Code", monospace';
 
 }
@@ -177,3 +193,4 @@ CodeMirror{
     font-size: 11px !important;
   }
 }
+
