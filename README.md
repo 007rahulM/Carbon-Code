@@ -1,4 +1,4 @@
-# Carbon Canvas
+# Carbon Code
 
 Create beautiful, shareable code images inspired by Carbon. Choose a theme, language, background color, and padding, then export a PNG in one click.
 
