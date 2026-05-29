@@ -60,5 +60,3 @@ Pull requests are welcome. Please open an issue to discuss major changes.
 ## Acknowledgements
 Inspired by the Carbon code snippet generator.
 
-## License
-This project is licensed under the [MIT License](LICENSE).
